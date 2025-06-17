@@ -1,0 +1,29 @@
+# 英译中个性化翻译程序依赖包
+
+# 基础依赖
+#argparse  # 命令行参数解析（Python内置）
+#json      # JSON数据处理（Python内置）
+#os        # 操作系统接口（Python内置）
+#re        # 正则表达式（Python内置）
+#typing    # 类型提示（Python内置）
+#collections  # 集合类型（Python内置）
+
+# 网络爬虫依赖
+requests>=2.25.1  # HTTP请求库，用于从Smogon论坛获取内容
+beautifulsoup4>=4.9.3  # HTML解析库，用于解析网页内容
+lxml>=4.6.3  # XML/HTML解析器
+
+# 可选依赖（用于扩展功能）
+# nltk>=3.6.2  # 自然语言处理库
+# jieba>=0.42.1  # 中文分词库
+# openai>=0.27.0  # OpenAI API客户端
+transformers>=4.21.0  # Hugging Face变换器库
+torch>=1.12.0  # PyTorch深度学习框架
+numpy>=1.21.0  # 数值计算库
+scipy>=1.7.0  # 科学计算库
+sacrebleu>=2.0.0  # BLEU评估指标
+
+# 开发依赖
+# pytest>=6.2.4  # 测试框架
+# black>=21.6b0  # 代码格式化工具
+# flake8>=3.9.2  # 代码检查工具

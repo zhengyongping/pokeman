@@ -1,0 +1,231 @@
+{
+  "models": {
+    "mt5_small": {
+      "name": "google/mt5-small",
+      "description": "多语言T5小型模型，适合快速实验",
+      "parameters": "300M",
+      "memory_requirement": "2GB",
+      "recommended_batch_size": 8,
+      "max_length": 512,
+      "languages": ["en", "zh", "ja", "ko", "de", "fr", "es"],
+      "use_case": "development_testing"
+    },
+    "mt5_base": {
+      "name": "google/mt5-base",
+      "description": "多语言T5基础模型，平衡性能和资源消耗",
+      "parameters": "580M",
+      "memory_requirement": "4GB",
+      "recommended_batch_size": 4,
+      "max_length": 512,
+      "languages": ["en", "zh", "ja", "ko", "de", "fr", "es"],
+      "use_case": "production"
+    },
+    "mt5_large": {
+      "name": "google/mt5-large",
+      "description": "多语言T5大型模型，高质量翻译",
+      "parameters": "1.2B",
+      "memory_requirement": "8GB",
+      "recommended_batch_size": 2,
+      "max_length": 512,
+      "languages": ["en", "zh", "ja", "ko", "de", "fr", "es"],
+      "use_case": "high_quality"
+    },
+    "mbart_large": {
+      "name": "facebook/mbart-large-50-many-to-many-mmt",
+      "description": "多语言BART模型，支持50种语言",
+      "parameters": "610M",
+      "memory_requirement": "6GB",
+      "recommended_batch_size": 4,
+      "max_length": 1024,
+      "languages": ["en_XX", "zh_CN", "ja_XX", "ko_KR"],
+      "use_case": "multilingual"
+    },
+    "opus_en_zh": {
+      "name": "Helsinki-NLP/opus-mt-en-zh",
+      "description": "专门的英中翻译模型",
+      "parameters": "74M",
+      "memory_requirement": "1GB",
+      "recommended_batch_size": 16,
+      "max_length": 512,
+      "languages": ["en", "zh"],
+      "use_case": "english_chinese_only"
+    }
+  },
+  "training_configs": {
+    "quick_test": {
+      "num_epochs": 1,
+      "learning_rate": 5e-5,
+      "warmup_steps": 100,
+      "save_steps": 500,
+      "eval_steps": 250,
+      "description": "快速测试配置"
+    },
+    "development": {
+      "num_epochs": 3,
+      "learning_rate": 3e-5,
+      "warmup_steps": 500,
+      "save_steps": 1000,
+      "eval_steps": 500,
+      "description": "开发和测试用配置"
+    },
+    "production": {
+      "num_epochs": 10,
+      "learning_rate": 2e-5,
+      "warmup_steps": 1000,
+      "save_steps": 2000,
+      "eval_steps": 1000,
+      "description": "生产环境配置"
+    },
+    "fine_tuning": {
+      "num_epochs": 5,
+      "learning_rate": 1e-5,
+      "warmup_steps": 800,
+      "save_steps": 1500,
+      "eval_steps": 750,
+      "description": "精细调优配置"
+    },
+    "demo": {
+      "num_epochs": 2,
+      "learning_rate": 5e-5,
+      "warmup_steps": 50,
+      "save_steps": 200,
+      "eval_steps": 100,
+      "description": "演示用配置"
+    },
+    "intensive": {
+      "num_epochs": 20,
+      "learning_rate": 1e-5,
+      "warmup_steps": 2000,
+      "save_steps": 5000,
+      "eval_steps": 2500,
+      "description": "深度训练配置"
+    }
+  },
+  "evaluation_metrics": {
+    "bleu": {
+      "name": "BLEU Score",
+      "description": "双语评估替换评分",
+      "range": "0-100",
+      "higher_better": true
+    },
+    "rouge": {
+      "name": "ROUGE Score",
+      "description": "面向摘要的评估指标",
+      "range": "0-1",
+      "higher_better": true
+    },
+    "meteor": {
+      "name": "METEOR Score",
+      "description": "基于词汇匹配的评估指标",
+      "range": "0-1",
+      "higher_better": true
+    },
+    "character_similarity": {
+      "name": "Character Similarity",
+      "description": "字符级相似度",
+      "range": "0-1",
+      "higher_better": true
+    }
+  },
+  "pokemon_domains": {
+    "pokemon_info": {
+      "keywords": ["pokemon", "type", "ability", "stats", "hp", "attack", "defense", "speed", "special"],
+      "difficulty_weight": 1.0,
+      "description": "宝可梦基本信息"
+    },
+    "moves_abilities": {
+      "keywords": ["move", "ability", "damage", "effect", "power", "accuracy", "priority", "contact"],
+      "difficulty_weight": 1.2,
+      "description": "招式和特性"
+    },
+    "items_equipment": {
+      "keywords": ["item", "hold", "berry", "stone", "band", "orb", "vest", "leftovers", "choice"],
+      "difficulty_weight": 1.1,
+      "description": "道具和装备"
+    },
+    "battle_strategy": {
+      "keywords": ["strategy", "team", "synergy", "counter", "meta", "tier", "usage", "lead", "pivot"],
+      "difficulty_weight": 1.5,
+      "description": "对战策略"
+    },
+    "game_mechanics": {
+      "keywords": ["mechanic", "calculation", "formula", "priority", "weather", "terrain", "hazard", "entry"],
+      "difficulty_weight": 1.8,
+      "description": "游戏机制"
+    },
+    "status_effects": {
+      "keywords": ["status", "poison", "burn", "paralyze", "sleep", "freeze", "confusion", "flinch"],
+      "difficulty_weight": 1.3,
+      "description": "状态效果"
+    },
+    "competitive": {
+      "keywords": ["competitive", "tournament", "format", "ban", "restriction", "clause", "smogon"],
+      "difficulty_weight": 1.6,
+      "description": "竞技对战"
+    }
+  },
+  "preprocessing": {
+    "text_normalization": {
+      "remove_extra_spaces": true,
+      "lowercase_non_names": false,
+      "remove_special_chars": false,
+      "standardize_punctuation": true
+    },
+    "term_replacement": {
+      "enable_pokemon_terms": true,
+      "enable_move_terms": true,
+      "enable_ability_terms": true,
+      "enable_item_terms": true
+    },
+    "length_limits": {
+      "min_source_length": 5,
+      "max_source_length": 512,
+      "min_target_length": 2,
+      "max_target_length": 512
+    }
+  },
+  "postprocessing": {
+    "term_mapping": {
+      "apply_pokemon_mapping": true,
+      "apply_move_mapping": true,
+      "apply_ability_mapping": true,
+      "case_sensitive": false
+    },
+    "quality_filtering": {
+      "min_similarity_score": 0.3,
+      "max_length_ratio": 3.0,
+      "filter_incomplete": true
+    }
+  },
+  "hardware_requirements": {
+    "minimum": {
+      "ram": "8GB",
+      "gpu_memory": "4GB",
+      "storage": "10GB",
+      "recommended_models": ["mt5_small", "opus_en_zh"]
+    },
+    "recommended": {
+      "ram": "16GB",
+      "gpu_memory": "8GB",
+      "storage": "20GB",
+      "recommended_models": ["mt5_base", "mbart_large"]
+    },
+    "high_performance": {
+      "ram": "32GB",
+      "gpu_memory": "16GB",
+      "storage": "50GB",
+      "recommended_models": ["mt5_large"]
+    }
+  },
+  "default_settings": {
+    "model": "mt5_small",
+    "training_config": "development",
+    "batch_size": 4,
+    "max_length": 512,
+    "num_beams": 4,
+    "early_stopping": true,
+    "save_best_model": true,
+    "evaluation_strategy": "steps",
+    "logging_steps": 100
+  }
+}
