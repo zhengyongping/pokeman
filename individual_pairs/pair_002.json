@@ -1,0 +1,26 @@
+[
+  {
+    "source": "Pikachu is an Electric-type Pokemon.",
+    "target": "皮卡丘是电属性宝可梦。",
+    "source_lang": "english",
+    "target_lang": "chinese"
+  },
+  {
+    "source": "Charizard can learn Fire-type moves.",
+    "target": "喷火龙可以学习火属性招式。",
+    "source_lang": "english",
+    "target_lang": "chinese"
+  },
+  {
+    "source": "Pokemon trainers catch Pokemon with Pokeballs.",
+    "target": "宝可梦训练师用精灵球捕捉宝可梦。",
+    "source_lang": "english",
+    "target_lang": "chinese"
+  },
+  {
+    "source": "Gyarados is a Water and Flying type Pokemon.",
+    "target": "暴鲤龙是水系和飞行系宝可梦。",
+    "source_lang": "english",
+    "target_lang": "chinese"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "source": "Hello, how are you?",
+    "target": "你好，你好吗？",
+    "source_lang": "english",
+    "target_lang": "chinese"
+  },
+  {
+    "source": "What's your name?",
+    "target": "你叫什么名字？",
+    "source_lang": "english",
+    "target_lang": "chinese"
+  },
+  {
+    "source": "Nice to meet you.",
+    "target": "很高兴见到你。",
+    "source_lang": "english",
+    "target_lang": "chinese"
+  }
+]

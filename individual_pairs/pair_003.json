@@ -1,0 +1,26 @@
+[
+  {
+    "source": "Good morning!",
+    "target": "早上好！",
+    "source_lang": "english",
+    "target_lang": "chinese"
+  },
+  {
+    "source": "Thank you very much.",
+    "target": "非常感谢。",
+    "source_lang": "english",
+    "target_lang": "chinese"
+  },
+  {
+    "source": "See you tomorrow.",
+    "target": "明天见。",
+    "source_lang": "english",
+    "target_lang": "chinese"
+  },
+  {
+    "source": "Have a nice day!",
+    "target": "祝你今天愉快！",
+    "source_lang": "english",
+    "target_lang": "chinese"
+  }
+]
